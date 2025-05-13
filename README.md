@@ -22,7 +22,7 @@ A React application that analyzes employee project data to identify and display 
 
 1. Clone the repository:
 ```bash
-git clone [your-repository-url]
+git clone https://github.com/smasenov/stefan-asenov-employees
 ```
 
 2. Install dependencies:
@@ -54,7 +54,3 @@ EmpID,ProjectID,DateFrom,DateTo
 1,1,2020-01-01,2020-06-30
 2,1,2020-02-01,2020-08-31
 ```
-
-## License
-
-MIT
