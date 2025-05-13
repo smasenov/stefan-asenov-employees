@@ -10,7 +10,7 @@ export const parseDate = (dateStr: string): Date | null => {
       return null;
    }
 
-   // Try different date formats
+   // Different date formats
    const formats = [
       'YYYY-MM-DD',
       'DD/MM/YYYY',

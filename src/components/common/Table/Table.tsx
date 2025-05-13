@@ -1,47 +1,27 @@
-import React, { type ReactNode, type JSX, type HTMLProps } from 'react';
+import React, { type ReactNode } from 'react';
 import styles from './Table.module.scss';
 
-interface ColsType {
-   cols: number;
-   colsTemplate?: never;
-   children: React.ReactNode;
-}
-
-interface ColsTemplateType {
-   cols?: never;
+interface TableProps {
    colsTemplate: string;
    children: ReactNode;
 }
 
-type TableProps = ColsType | ColsTemplateType;
-
-const Table = ({ cols, colsTemplate, children }: Readonly<TableProps>): JSX.Element => {
-
-   const style = {
-      gridTemplateColumns: colsTemplate ?? `repeat(${cols}, auto)`
-   };
-
+const Table: React.FC<TableProps> & {
+   Head: React.FC<{ children: ReactNode }>;
+   Row: React.FC<{ children: ReactNode }>;
+   Cell: React.FC<{ children: ReactNode }>;
+} = ({ colsTemplate, children }) => {
    return (
       <div className={styles.tableWrapper}>
-         <div className={styles.table} style={style}>
+         <div className={styles.table} style={{ gridTemplateColumns: colsTemplate }}>
             {children}
          </div>
       </div>
    );
 };
 
-const TableHead = ({ children, ...rest }: HTMLProps<HTMLDivElement>): JSX.Element => (
-   <div className={styles.tableHead} {...rest}>{children}</div>
-);
-
-const TableRow = ({ children }: Readonly<{ children: ReactNode }>): JSX.Element => <>{children}</>;
-
-const TableCell = ({ children, ...rest }: HTMLProps<HTMLDivElement>): JSX.Element => (
-   <div className={styles.tableCell} {...rest}>{children}</div>
-);
-
-Table.Head = TableHead;
-Table.Row = TableRow;
-Table.Cell = TableCell;
+Table.Head = ({ children }) => <div className={styles.tableHead}>{children}</div>;
+Table.Row = ({ children }) => <>{children}</>;
+Table.Cell = ({ children }) => <div className={styles.tableCell}>{children}</div>;
 
 export default Table;
