@@ -21,8 +21,15 @@ A React application that analyzes employee project data to identify and display 
 ## Getting Started
 
 1. Clone the repository:
+
+Using HTTPS:
 ```bash
 git clone https://github.com/smasenov/stefan-asenov-employees
+```
+
+Using SSH:
+```bash
+git clone git@github.com:smasenov/stefan-asenov-employees.git
 ```
 
 2. Install dependencies:
