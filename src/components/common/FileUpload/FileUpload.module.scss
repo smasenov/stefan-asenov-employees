@@ -1,0 +1,74 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.uploadContainer {
+   width: 100%;
+   max-width: 600px;
+   margin: $spacing-xl auto;
+   padding: $spacing-xl;
+   border: $border-width dashed $border-color;
+   border-radius: $border-radius;
+   background-color: $white;
+   transition: all 0.3s ease;
+   cursor: pointer;
+
+   &:hover {
+      border-color: $primary-color;
+      background-color: lighten($primary-color, 45%);
+   }
+
+   &.error {
+      border-color: #dc3545;
+      background-color: #fff5f5;
+   }
+}
+
+.fileInput {
+   display: none;
+}
+
+.uploadLabel {
+   display: block;
+   width: 100%;
+   height: 100%;
+   cursor: pointer;
+}
+
+.uploadContent {
+   @include flex-column;
+   align-items: center;
+   gap: $spacing-md;
+   text-align: center;
+}
+
+.uploadIcon {
+   font-size: 3rem;
+}
+
+.uploadHint {
+   font-size: $font-size-sm;
+   color: $text-muted;
+}
+
+.disabled {
+   opacity: 0.6;
+   cursor: not-allowed;
+   border-color: $text-muted;
+   background-color: $white;
+
+   &:hover {
+      border-color: $text-muted;
+      background-color: $white;
+   }
+
+   .uploadLabel {
+      cursor: not-allowed;
+   }
+}
+
+.errorMessage {
+   color: #dc3545;
+   font-size: 0.875rem;
+   margin-top: 0.5rem;
+   text-align: center;
+}

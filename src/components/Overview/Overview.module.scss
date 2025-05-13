@@ -1,0 +1,44 @@
+.noData {
+   text-align: center;
+   padding: 2rem;
+   color: #6c757d;
+   font-size: 1.1rem;
+}
+
+.footer {
+   margin: 1.5rem;
+}
+
+.header {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   margin-bottom: 1rem;
+}
+
+.headerTitle {
+   display: flex;
+   flex-direction: column;
+}
+
+.headerActions {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+   margin-left: 2rem;
+}
+
+.clearButton {
+   padding: 0.5rem 1rem;
+   background-color: #dc3545;
+   color: white;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   font-size: 0.9rem;
+   transition: background-color 0.2s;
+
+   &:hover {
+      background-color: #c82333;
+   }
+}
